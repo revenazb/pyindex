@@ -102,7 +102,6 @@ def deinterleave2(n):
     Deinterleaves an integer into two integers.
     """
     iterations = int(ceil(n.bit_length() / 32))
-    print n
 
     x = y = 0
     for i in range(iterations):
