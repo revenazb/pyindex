@@ -46,7 +46,6 @@ def part1by2(n):
 
     return n
 
-
 def unpart1by1(n):
     """
     Gets every other bits from `n`.
@@ -124,3 +123,21 @@ def deinterleave3(n):
     Deinterleaves an integer into three integers.
     """
     return unpart1by2(n), unpart1by2(n >> 1), unpart1by2(n >> 2)
+
+def interleave4(w, x, y, z):
+    """
+    Interleaves four integers.
+    """
+
+    return interleave2(interleave2(w, y), interleave2(x, z))
+
+def deinterleave4(n):
+    """
+    Deinterleaves four integers.
+    """
+
+    wy, xz = deinterleave2(n)
+    w, y = deinterleave2(wy)
+    x, z = deinterleave2(xz)
+
+    return w, x, y, z
